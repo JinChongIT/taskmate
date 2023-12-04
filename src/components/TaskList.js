@@ -24,7 +24,7 @@ const TaskList = () => {
 
     if(userListVisability) {
         dspUserList = userList.map((userListItem) => ( 
-            <Task id={userListItem.id} name={userListItem.name} />
+            <Task id={userListItem.id} name={userListItem.name} handleDelete={handleDelete} />
         )) 
     }
 
