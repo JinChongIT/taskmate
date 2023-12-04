@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Task from './Task';
 
 const TaskList = () => {
 
@@ -23,11 +24,8 @@ const TaskList = () => {
 
     if(userListVisability) {
         dspUserList = userList.map((userListItem) => ( 
-                 <li key="userListItem.id">
-                <span>{userListItem.id} {userListItem.name}</span>
-              <button onClick={() => handleDelete(userListItem.id)}>Delete</button>
-            </li>
-          )) 
+            <Task id={userListItem.id} name={userListItem.name} />
+        )) 
     }
 
   return (
