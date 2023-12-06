@@ -1,12 +1,10 @@
 import React from 'react'
 
-const Task = (props) => {
+export const Task = ({id, name, onHandleDelete}) => {
   return (
-    <li key={props.id}>
-        <span>{props.id} {props.name}</span>
-        <button onClick={() => props.handleDelete(props.id)}>Delete</button>
+    <li key={id}>
+        <span>{id} {name}</span>
+        <button onClick={() => onHandleDelete(id)}>Delete</button>
     </li>
   )
 }
-
-export default Task
