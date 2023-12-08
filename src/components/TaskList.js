@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { Task } from './Task';
+import { BoxCard } from './BoxCard';
 
-const TaskList = () => {
 
+export const TaskList = () => {
+    
     let dspUserList = "Hidden";
     const initialState = [{id: 3317019, name: "Jin"},{id: 222, name: "Bob"},{id: 332, name: "Tim"}]; 
 
@@ -23,11 +26,8 @@ const TaskList = () => {
 
     if(userListVisability) {
         dspUserList = userList.map((userListItem) => ( 
-                 <li key="userListItem.id">
-                <span>{userListItem.id} {userListItem.name}</span>
-              <button onClick={() => handleDelete(userListItem.id)}>Delete</button>
-            </li>
-          )) 
+            <Task id={userListItem.id} name={userListItem.name} onHandleDelete={handleDelete} />
+        )) 
     }
 
   return (
@@ -39,9 +39,14 @@ const TaskList = () => {
             dspUserList
         } 
         </ul>
+        <BoxCard>
+          <p>Here I am</p>
+          <p>Working</p>
+        </BoxCard>
+        <BoxCard>
+          <p>Here I am 2</p>
+          <p>Working 2</p>
+        </BoxCard>
     </div>
   )
-
 }
-
-export default TaskList
