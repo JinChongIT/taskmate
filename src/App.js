@@ -1,13 +1,12 @@
-import './App.css';
-import { Header }  from './components/Header';
-import { TaskList } from './components/TaskList';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Home } from './pages/Home';
 
 export const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <h1>Hello World</h1>
-      <TaskList />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+  </BrowserRouter>
   );
 }
